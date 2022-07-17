@@ -1,0 +1,33 @@
+<h1>Clients</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Client</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 30%">First Name</th>
+            <th style="width: 30%">Last Name</th>
+            <th style="width: 30%">Username</th>
+            <th style="width: 30%">ZoneID</th>
+            <th style="width: 10%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let client of clients">
+            <td>{{client.firstName}}</td>
+            <td>{{client.lastName}}</td>
+            <td>{{client.clientname}}</td>
+            <td>{{client.zoneid}</td>
+            <td style="white-space: nowrap">
+                <a routerLink="edit/{{client.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <button (click)="deleteClient(client.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="client.isDeleting">
+                    <span *ngIf="client.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!client.isDeleting">Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="!clients">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://datapostapi.conveyor.cloud/'
+  apiUrl: 'https://datapostapi.conveyor.cloud/api'
 };
 /*
  * For easier debugging in development mode, you can import the following file
