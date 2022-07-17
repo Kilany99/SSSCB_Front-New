@@ -1,0 +1,27 @@
+<h1>Anomaly History</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 20%">Anomaly event ID</th>
+            <th style="width: 20%">Screenshot</th>
+            <th style="width: 20%">Anomaly Type</th>
+            <th style="width: 20%">Date and Time</th>
+            <th style="width: 20%">Zone ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let postedData of postedDatas">
+            <td>{{postedData.posteddataid}}</td>
+            <td><a href="" target="_blank">Click here to view</a></td>
+            <td>{{postedData.anomalyType}}</td>
+            <td>{{postedData.anomalydatetime}}</td>
+            <td>{{postedData.zoneid}}</td>
+
+        </tr>
+        <tr *ngIf="!postedDatas">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
