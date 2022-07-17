@@ -42,7 +42,7 @@ export class ClientService {
         return this.http.put(`${environment.apiUrl}/Clients/${id}`, params)
             .pipe(map(x => {
                 // update stored user if the logged in user updated their own record
-                if (id == this.clientValue.id) {
+                if (id == this.clientValue.clientid) {
                     // update local storage
                     const client = { ...this.clientValue, ...params };
                     localStorage.setItem('client', JSON.stringify(client));

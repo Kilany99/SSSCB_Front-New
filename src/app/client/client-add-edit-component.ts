@@ -23,7 +23,7 @@ export class ClientAddEditComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.id = this.route.snapshot.params['id'];
+        this.id = this.route.snapshot.params['clientid'];
         this.isAddMode = !this.id;
         
         // password not required in edit mode

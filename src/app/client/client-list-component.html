@@ -17,8 +17,8 @@
             <td>{{client.clientname}}</td>
             <td>{{client.zoneid}</td>
             <td style="white-space: nowrap">
-                <a routerLink="edit/{{client.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
-                <button (click)="deleteClient(client.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="client.isDeleting">
+                <a routerLink="edit/{{client.clientid}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <button (click)="deleteClient(client.clientid)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="client.isDeleting">
                     <span *ngIf="client.isDeleting" class="spinner-border spinner-border-sm"></span>
                     <span *ngIf="!client.isDeleting">Delete</span>
                 </button>

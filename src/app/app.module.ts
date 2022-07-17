@@ -16,6 +16,7 @@ import { ErrorInterceptor } from 'src/app/_helpers/error-interceptor';
 import { JwtInterceptor } from 'src/app/_helpers/jwt-interceptor';
 import { RouterModule, Routes } from '@angular/router';
 import {AppRoutingModule} from 'src/app/app-routing-module';
+import { PostedDataListComponent } from './postedData/posted-data-list-component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {AppRoutingModule} from 'src/app/app-routing-module';
     CamerasDetailsComponent,
     CamerasDetailsFormComponent,
     NavBarComponent,
-    AlertComponent
+    AlertComponent,
+    PostedDataListComponent
   ],
   imports: [
     BrowserModule,
