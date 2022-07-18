@@ -17,6 +17,7 @@ import { JwtInterceptor } from 'src/app/_helpers/jwt-interceptor';
 import { RouterModule, Routes } from '@angular/router';
 import {AppRoutingModule} from 'src/app/app-routing-module';
 import { PostedDataListComponent } from './postedData/posted-data-list-component';
+import { CameraListComponent } from './cameras/camera-list-component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { PostedDataListComponent } from './postedData/posted-data-list-component
     NavBarComponent,
     AlertComponent,
     PostedDataListComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     FormsModule,

@@ -16,10 +16,10 @@ export class ClientListComponent implements OnInit {
     }
 
     deleteClient(id: string) {
-        const client = this.clients.find(x => x.id === id);
+        const client = this.clients.find(x => x.clientId === id);
         client.isDeleting = true;
         this.clientService.delete(id)
             .pipe(first())
-            .subscribe(() => this.clients = this.clients.filter(x => x.id !== id));
+            .subscribe(() => this.clients = this.clients.filter(x => x.clientId !== id));
     }
 }

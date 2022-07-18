@@ -3,11 +3,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
+import { AccountService } from 'src/app/_services/account-service';
 import {  AlertService } from 'src/app/_services/alert-service';
-import { ClientService } from '../_services/client-service';
+import { CameraService } from '../_services/camera-service';
 
-@Component({ templateUrl: 'client-add-edit-component.html' })
-export class ClientAddEditComponent implements OnInit {
+@Component({ templateUrl: 'camera-add-edit-component.html' })
+export class CameraAddEditComponent implements OnInit {
     form: FormGroup;
     id: string;
     isAddMode: boolean;
@@ -18,7 +19,7 @@ export class ClientAddEditComponent implements OnInit {
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        private clientService: ClientService,
+        private cameraService: CameraService,
         private alertService: AlertService
     ) {}
 
@@ -31,17 +32,16 @@ export class ClientAddEditComponent implements OnInit {
         if (this.isAddMode) {
             passwordValidators.push(Validators.required);
         }
+        
 
         this.form = this.formBuilder.group({
-            firstName: ['', Validators.required],
-            lastName: ['', Validators.required],
-            clientName: ['', Validators.required],
-            password: ['', passwordValidators],
-            zoneId: ['',Validators.required]
+            zonePriority: ['', Validators.required],
+            zoneDescription: ['', Validators.required],
+            cameraZoneid: ['', Validators.required]
         });
 
         if (!this.isAddMode) {
-            this.clientService.getById(this.id)
+            this.cameraService.getById(this.id)
                 .pipe(first())
                 .subscribe(x => this.form.patchValue(x));
         }
@@ -63,18 +63,18 @@ export class ClientAddEditComponent implements OnInit {
 
         this.loading = true;
         if (this.isAddMode) {
-            this.createClient();
+            this.createCamera();
         } else {
-            this.updateClient();
+            this.updateCamera();
         }
     }
 
-    private createClient() {
-        this.clientService.register(this.form.value)
+    private createCamera() {
+        this.cameraService.register(this.form.value)
             .pipe(first())
             .subscribe({
                 next: () => {
-                    this.alertService.success('Client added successfully', { keepAfterRouteChange: true });
+                    this.alertService.success('CameraZone added successfully', { keepAfterRouteChange: true });
                     this.router.navigate(['../'], { relativeTo: this.route });
                 },
                 error: error => {
@@ -84,8 +84,8 @@ export class ClientAddEditComponent implements OnInit {
             });
     }
 
-    private updateClient() {
-        this.clientService.update(this.id, this.form.value)
+    private updateCamera() {
+        this.cameraService.update(this.id, this.form.value)
             .pipe(first())
             .subscribe({
                 next: () => {

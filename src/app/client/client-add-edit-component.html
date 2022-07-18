@@ -19,10 +19,10 @@
     </div>
     <div class="form-row">
         <div class="form-group col">
-            <label for="clientname">Clientname</label>
-            <input type="text" formControlName="clientname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.clientname.errors }" />
-            <div *ngIf="submitted && f.clientname.errors" class="invalid-feedback">
-                <div *ngIf="f.clientname.errors.required">Clientname is required</div>
+            <label for="clientName">Clientname</label>
+            <input type="text" formControlName="clientName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.clientName.errors }" />
+            <div *ngIf="submitted && f.clientName.errors" class="invalid-feedback">
+                <div *ngIf="f.clientName.errors.required">Clientname is required</div>
             </div>
         </div>
         <div class="form-group col">
@@ -37,12 +37,12 @@
             </div>
         </div>
         <div class="form-group col">
-            <label for="zoneid">
+            <label for="zoneId">
                 ZoneID
             </label>
-            <input type="text" formControlName="zoneid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.zoneid.errors }" />
-            <div *ngIf="submitted && f.zoneid.errors" class="invalid-feedback">
-                <div *ngIf="f.zoneid.errors.required">zoneid is required</div>
+            <input type="text" formControlName="zoneId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.zoneId.errors }" />
+            <div *ngIf="submitted && f.zoneId.errors" class="invalid-feedback">
+                <div *ngIf="f.zoneId.errors.required">zoneid is required</div>
             </div>
         </div>
     </div>
@@ -51,6 +51,6 @@
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
             Save
         </button>
-        <a routerLink="/users" class="btn btn-link">Cancel</a>
+        <a routerLink="/clients" class="btn btn-link">Cancel</a>
     </div>
 </form>

@@ -5,7 +5,7 @@
         <tr>
             <th style="width: 30%">First Name</th>
             <th style="width: 30%">Last Name</th>
-            <th style="width: 30%">Username</th>
+            <th style="width: 30%">ClientName</th>
             <th style="width: 30%">ZoneID</th>
             <th style="width: 10%"></th>
         </tr>
@@ -15,10 +15,10 @@
             <td>{{client.firstName}}</td>
             <td>{{client.lastName}}</td>
             <td>{{client.clientname}}</td>
-            <td>{{client.zoneid}</td>
+            <td>{{client.zoneId}}</td>
             <td style="white-space: nowrap">
-                <a routerLink="edit/{{client.clientid}}" class="btn btn-sm btn-primary mr-1">Edit</a>
-                <button (click)="deleteClient(client.clientid)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="client.isDeleting">
+                <a routerLink="edit/{{client.clientId}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <button (click)="deleteClient(client.clientId)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="client.isDeleting">
                     <span *ngIf="client.isDeleting" class="spinner-border spinner-border-sm"></span>
                     <span *ngIf="!client.isDeleting">Delete</span>
                 </button>

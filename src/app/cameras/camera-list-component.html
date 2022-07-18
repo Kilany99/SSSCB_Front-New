@@ -1,0 +1,32 @@
+<h1>Zone Details</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add New Zone</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 33%">Zone ID</th>
+            <th style="width: 33%">Zone Priority</th>
+            <th style="width: 33%">Zone Description</th>
+            <th></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let camera of cameras">
+            <td>{{camera.cameraZoneid}}</td>
+            <td>{{camera.zonePriority}}</td>
+            <td>{{camera.zoneDescription}}</td>
+            <td style="white-space: nowrap">
+                <a routerLink="edit/{{camera.cameraZoneid}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <button (click)="deleteCamera(camera.cameraZoneid)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="camera.isDeleting">
+                    <span *ngIf="camera.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!camera.isDeleting">Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="!cameras">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
