@@ -25,3 +25,11 @@
   input.invalid {
     border-color: red;
   }
+
+
+  #sect1 {  
+    height: 650 px;  
+    color: #fff;background-image: url("./assets/images/wired_wired-news-and-science-surveillance.jpg");  
+    background-size: 100% ;  
+    background-size: cover;  
+}   

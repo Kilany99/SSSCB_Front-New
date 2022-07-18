@@ -12,7 +12,7 @@ const clientModule = () => import('src/app/client/client-module').then(x => x.Cl
 const cameraModule = () => import('src/app/cameras/camera-module').then(x => x.CameraModule);
 
 const routes: Routes = [
-    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: '', component: HomeComponent, canActivate: [AuthGuard]  },
     { path: 'users', loadChildren: usersModule, canActivate: [AuthGuard] },
     { path: 'account', loadChildren: accountModule,canActivate: [AuthGuard] },
     { path: 'clients', loadChildren : clientModule,canActivate: [AuthGuard]  },
