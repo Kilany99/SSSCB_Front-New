@@ -10,13 +10,14 @@ const accountModule = () => import('src/app/account/account-module').then(x => x
 const usersModule = () => import('src/app/users/users-module').then(x => x.UsersModule);
 const clientModule = () => import('src/app/client/client-module').then(x => x.ClientModule);
 const cameraModule = () => import('src/app/cameras/camera-module').then(x => x.CameraModule);
+const postedDataModule = () => import('src/app/postedData/posted-data-module').then(x => x.PostedDataModule);
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard]  },
     { path: 'users', loadChildren: usersModule, canActivate: [AuthGuard] },
     { path: 'account', loadChildren: accountModule,canActivate: [AuthGuard] },
     { path: 'clients', loadChildren : clientModule,canActivate: [AuthGuard]  },
-    { path: 'posteddatas',component: PostedDataListComponent,canActivate: [AuthGuard]},
+    { path: 'posteddatas',loadChildren: postedDataModule,canActivate: [AuthGuard]},
     { path: 'cameras',loadChildren: cameraModule,canActivate: [AuthGuard]},
 
     

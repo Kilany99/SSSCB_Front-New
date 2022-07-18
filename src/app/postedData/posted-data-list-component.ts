@@ -6,7 +6,6 @@ import { PostedDataService } from '../_services/posted-data-service';
 @Component({ templateUrl: 'posted-data-list-component.html' })
 export class PostedDataListComponent implements OnInit {
     postedDatas: any[] ;
-
     constructor(private postedDataService: PostedDataService) {}
 
     ngOnInit() {
@@ -15,6 +14,8 @@ export class PostedDataListComponent implements OnInit {
             .subscribe(postedDatas => this.postedDatas = postedDatas);
             
     }
+
+   
 
     
 }

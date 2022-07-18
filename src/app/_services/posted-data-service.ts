@@ -30,5 +30,8 @@ export class PostedDataService {
     getById(id: string) {
         return this.http.get<PostedData>(`${environment.apiUrl}/Values/data/${id}`);
     }
+    getScreenShot(id:string){
+        return this.http.get<string>(`${environment.apiUrl}/Values/data/screenshot/${id}`);
+    }
 
 }

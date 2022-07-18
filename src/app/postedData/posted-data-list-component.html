@@ -12,7 +12,7 @@
     <tbody>
         <tr *ngFor="let postedData of postedDatas">
             <td>{{postedData.postedDataid}}</td>
-            <td><a href="" target="_blank">Click here to view</a></td>
+            <td><a routerLink="show/{{postedData.postedDataid}}" target="_blank" >Click here to view</a></td>
             <td>{{postedData.anomalyType}}</td>
             <td>{{postedData.anomalyDatetime}}</td>
             <td>{{postedData.zoneId}}</td>

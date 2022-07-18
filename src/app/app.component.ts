@@ -12,11 +12,10 @@ import { Client } from './_models/client';
 export class AppComponent {
   title = 'SSSCB_Front';
   user: User;
-  client:Client;
 
-  constructor(private accountService: AccountService,private clientService: ClientService) {
+  constructor(private accountService: AccountService) {
       this.accountService.user.subscribe(x => this.user = x);
-      this.clientService.client.subscribe(x => this.client = x);
+
 
   }
 
